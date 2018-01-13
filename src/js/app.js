@@ -1,2 +1,17 @@
-// This code is automatically transpiled to `console.log('Hello World!');`
-(() => console.log('Hello World!'))();
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+
+export default class Hello extends Component {
+  render() {
+    return (
+      <div>
+        Hello from React Component Hello
+      </div>
+    );
+  }
+}
+
+render(
+  <Hello />,
+  document.getElementById('app')
+);
