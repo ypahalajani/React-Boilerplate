@@ -5,13 +5,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // Defining path constants
 const paths = {
   DIST: path.resolve(__dirname, 'dist'),
-  JS: path.resolve(__dirname, 'src/js'),
   SRC: path.resolve(__dirname, 'src')
 };
 
 // Webpack configuration
 module.exports = {
-  entry: path.join(paths.JS, 'app.js'),
+  entry: './index.js',
   output: {
     path: paths.DIST,
     filename: 'app.bundle.js'
@@ -30,9 +29,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: [
-          'babel-loader'
-        ]
+        use: ['babel-loader']
       },
       {
         test: /\.(css)$/,
@@ -42,13 +39,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        use: [
-          'file-loader'
-        ]
+        use: ['file-loader']
       }
     ]
   },
   resolve: {
     extensions: ['.js', '.jsx']
   }
-}
+};
